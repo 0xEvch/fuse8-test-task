@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;    
+  }
+
+.container {
+  position: relative;
+  width: 1596px;
+  height: 602px;
+  top: 292px;
+  left: 162px;
+  gap: 20px;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-around; 
+}
+
+li {
+  box-shadow: 0px 7px 25px 0px #64646F33;
+  background: #FFFFFF;
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+}
+
+li:nth-child(-n+2) {
+  width: 788px;
+  height: 262px;
+}
+
+li:nth-child(n+3) {
+  width: 518px;
+  height: 150px;
+  margin: 7px;
+}
+
+.alive {
+  color: green;
+}
+
+.dead {
+  color: red;
+}
+
+span {
+  top: 0px;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.status {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+}
+
+p {
+  color: #767676;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: normal;
+  margin: 0;
+}
+
+
+.created {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+}
+
+.big {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-family: 'Fira Sans';
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 30px;
+  letter-spacing: 0px;
+  color: #282626;
+}
+
+.small {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-family: 'Fira Sans';
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  letter-spacing: 0px;
+  color: #282626;
+}
+
+
+
