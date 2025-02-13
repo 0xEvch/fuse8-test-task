@@ -9,14 +9,12 @@ ul {
 
 .container {
   position: relative;
-  width: 1596px;
-  height: 602px;
+  max-width: 1596px;
   top: 292px;
-  left: 162px;
-  gap: 20px;
+  gap: 1rem;
   display: flex;
   flex-wrap: wrap; 
-  justify-content: space-around; 
+  justify-content: center; 
 }
 
 li {
@@ -38,6 +36,15 @@ li:nth-child(n+3) {
   margin: 7px;
 }
 
+p {
+  color: #767676;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  line-height: 30px;
+  margin: 0;
+  font-size: 14px;
+}
+
 .alive {
   color: green;
 }
@@ -47,56 +54,53 @@ li:nth-child(n+3) {
 }
 
 span {
-  top: 0px;
-  margin-left: 20px;
   font-weight: bold;
 }
 
 .status {
   position: absolute;
-  bottom: 20px;
+}
+
+#bigstatus{
+  bottom: 10%;
   left: 30px;
 }
 
-p {
-  color: #767676;
-  font-family: 'Montserrat';
-  font-weight: 400;
-  font-size: 14px;
-  line-height: normal;
-  margin: 0;
+#smallstatus{
+  bottom: 8%;
+  left: 34px;
 }
-
 
 .created {
   position: absolute;
-  right: 30px;
-  bottom: 20px;
+  right: 35px;
+  bottom: 21px;
 }
 
-.big {
+#bigcreated{
+  bottom: 10%;
+}
+
+#smallcreated{
+  bottom: 8%;
+}
+
+.name {
   position: absolute;
   top: 20px;
   left: 30px;
   font-family: 'Fira Sans';
   font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 30px;
+  color: #282626;
+}
+
+#bigname {
   font-size: 30px;
-  line-height: 30px;
-  letter-spacing: 0px;
-  color: #282626;
 }
 
-.small {
-  position: absolute;
-  top: 20px;
-  left: 30px;
-  font-family: 'Fira Sans';
-  font-weight: 400;
+#smallname {
   font-size: 25px;
-  line-height: 30px;
-  letter-spacing: 0px;
-  color: #282626;
 }
-
-
 
