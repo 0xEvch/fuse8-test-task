@@ -9,13 +9,14 @@ async function GetInfo(name) {
   if (!name) return [];
 
     const response = await axios.get(`https://rickandmortyapi.com/api/character/?name=${name}`);
-    return response.data.results.map((char) => ({
+    return { count: response.data.info.count,
+      results: response.data.results.map((char) => ({
         name: char.name,
         species: char.species,
         status: char.status,
         created: char.created,
         url: char.url
-    }))
+    }))}
 }
 
 function ChangeDate(value) {
@@ -23,20 +24,22 @@ function ChangeDate(value) {
   return `${day}.${month}.${year}`;
 }
 
-export default function Characterinfo({name}) {
+export default function Characterinfo({name, setCount}) {
 
     const {data, isLoading, error} = useQuery({
         queryKey: [name],
         queryFn: () => GetInfo(name),
         enabled: !!name,
     });
-    if (isLoading) return <p>Loading...</p>;
-    if (error) return <p>Error</p>;
+    if (isLoading) return console.log("Loading...");
+    if (error) return console.log("Error");
+
+    setCount(data?.count);
 
     return (
       <div class='container'>
         <ul>
-        {data?.map((char, index) => ( 
+        {data?.results.map((char, index) => ( 
           <li key={index}>
             <a href={char.url}>
               <p class="name" id={getId(index, "name")}>{char.name} – {char.species}</p>

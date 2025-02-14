@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import './SearchBar.css';
 
-export default function SearchBar({ onTextChange }) {
+export default function SearchBar({ onTextChange, count }) {
 
     const inputFocus = useRef(null);
 
@@ -13,5 +13,10 @@ export default function SearchBar({ onTextChange }) {
         onTextChange(event.target.value); 
     };
     
-    return  <input type="text" ref={inputFocus} onChange={handleChange} placeholder='Search characters...' autofocus/>;
+    return (
+        <div>
+            <input type="text" ref={inputFocus} onChange={handleChange} placeholder='Search characters...' autofocus/>
+            {count >0 && <p id="count">Found characters: {count}</p>}
+        </div>
+    )
 }

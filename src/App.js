@@ -8,6 +8,7 @@ const queryClient = new QueryClient();
 
 function App() {
   const [name, setName] = useState("");
+  const [count, setCount] = useState(0);
 
   const handleInputChange = (value) => {
     value.length > 3 ? setName(value) : setName("");
@@ -15,9 +16,9 @@ function App() {
 
   return (
     <div className="App">
-      <SearchBar onTextChange={handleInputChange} />
+      <SearchBar onTextChange={handleInputChange} count={count}/>
       <QueryClientProvider client={queryClient}>
-        <Characterinfo name={name} />
+        <Characterinfo name={name} setCount={setCount} />
       </QueryClientProvider>
     </div>
   );
