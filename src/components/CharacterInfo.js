@@ -37,7 +37,7 @@ export default function Characterinfo({name, setCount}) {
     
     useEffect(() => {
       !!name ? setCount(data?.count) : setCount(0);
-    }, [name]);
+    }, [name, data]);
 
     return (
       <div className='container'>
