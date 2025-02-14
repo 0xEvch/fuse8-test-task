@@ -36,7 +36,7 @@ export default function Characterinfo({name}) {
       <div class='container'>
         <ul>
         {data?.map((char, index) => ( 
-          <li key={index} class='card'>
+          <li key={index}>
             <p class="name" id={getId(index, "name")}>{char.name} – {char.species}</p>
             <p class='status' id={getId(index, "status")}>Status: <span class={getStatus(char.status)}>{char.status}</span></p>
             <p class='created' id={getId(index, "created")}>Created: {ChangeDate(char.created)}</p>
