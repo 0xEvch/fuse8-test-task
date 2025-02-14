@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
+import { useEffect } from "react";
 import axios from 'axios';
 import './CharacterInfo.css';
 
@@ -31,20 +32,22 @@ export default function Characterinfo({name, setCount}) {
         queryFn: () => GetInfo(name),
         enabled: !!name,
     });
-    if (isLoading) return console.log("Loading...");
-    if (error) return console.log("Error");
-
-    setCount(data?.count);
+    if (isLoading) console.log("Loading...");
+    if (error) console.log("Error");
+    
+    useEffect(() => {
+      !!name ? setCount(data?.count) : setCount(0);
+    }, [name]);
 
     return (
-      <div class='container'>
+      <div className='container'>
         <ul>
         {data?.results.map((char, index) => ( 
           <li key={index}>
             <a href={char.url}>
-              <p class="name" id={getId(index, "name")}>{char.name} – {char.species}</p>
-              <p class='status' id={getId(index, "status")}>Status: <span class={getStatus(char.status)}>{char.status}</span></p>
-              <p class='created' id={getId(index, "created")}>Created: {ChangeDate(char.created)}</p>
+              <p className="name" id={getId(index, "name")}>{char.name} – {char.species}</p>
+              <p className='status' id={getId(index, "status")}>Status: <span className={getStatus(char.status)}>{char.status}</span></p>
+              <p className='created' id={getId(index, "created")}>Created: {ChangeDate(char.created)}</p>
             </a>
           </li>
         ))}

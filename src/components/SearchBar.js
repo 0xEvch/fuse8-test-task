@@ -15,7 +15,7 @@ export default function SearchBar({ onTextChange, count }) {
     
     return (
         <div>
-            <input type="text" ref={inputFocus} onChange={handleChange} placeholder='Search characters...' autofocus/>
+            <input type="text" ref={inputFocus} onChange={handleChange} placeholder='Search characters...' autoFocus/>
             {count >0 && <p id="count">Found characters: {count}</p>}
         </div>
     )

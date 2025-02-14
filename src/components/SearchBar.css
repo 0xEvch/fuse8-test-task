@@ -27,8 +27,8 @@ input::placeholder {
 
 #count {
     position: absolute;
-    top: 205px;
-    left: 685px;
+    top: min(25vh, 205px); 
+    padding-left: clamp(15px, 25vw, 685px);
     color: #282626;
     font-family: Montserrat;
     font-weight: 400;
@@ -36,4 +36,45 @@ input::placeholder {
     line-height: 19.5px;
     letter-spacing: 0px;
     text-align: center;
+}
+
+@media (min-width: 1600px) {
+   #count {
+    padding-left: clamp(15px, 40vw, 685px);
+   }
+}
+  
+@media (min-width: 1200px) and (max-width: 1600px) {
+    #count {
+        padding-left: clamp(15px, 30vw, 685px);
+    }
+}
+  
+@media (min-width: 1000px) and (max-width: 1200px) {
+    #count {
+        font-size: 18px;
+        padding-left: clamp(15px, 24vw, 685px);
+    }
+}
+   
+@media (min-width: 768px) and (max-width: 1000px) {
+    input {
+        font-size: 20px;
+    }
+    
+    #count {
+        font-size: 18px;
+        padding-left: clamp(15px, 17vw, 685px);
+    }
+} 
+
+@media (max-width: 768px) {
+    input {
+        font-size: 18px;
+    }
+
+    #count {
+        font-size: 15px;
+        padding-left: clamp(15px, 15vw, 685px);
+    }
 }
