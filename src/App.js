@@ -10,7 +10,7 @@ function App() {
   const [name, setName] = useState("");
 
   const handleInputChange = (value) => {
-    setName(value); 
+    value.length > 3 ? setName(value) : setName("");
   };
 
   return (
