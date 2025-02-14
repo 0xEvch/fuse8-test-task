@@ -14,6 +14,7 @@ async function GetInfo(name) {
         species: char.species,
         status: char.status,
         created: char.created,
+        url: char.url
     }))
 }
 
@@ -37,9 +38,11 @@ export default function Characterinfo({name}) {
         <ul>
         {data?.map((char, index) => ( 
           <li key={index}>
-            <p class="name" id={getId(index, "name")}>{char.name} – {char.species}</p>
-            <p class='status' id={getId(index, "status")}>Status: <span class={getStatus(char.status)}>{char.status}</span></p>
-            <p class='created' id={getId(index, "created")}>Created: {ChangeDate(char.created)}</p>
+            <a href={char.url}>
+              <p class="name" id={getId(index, "name")}>{char.name} – {char.species}</p>
+              <p class='status' id={getId(index, "status")}>Status: <span class={getStatus(char.status)}>{char.status}</span></p>
+              <p class='created' id={getId(index, "created")}>Created: {ChangeDate(char.created)}</p>
+            </a>
           </li>
         ))}
       </ul>
